@@ -2,7 +2,7 @@ import os
 import streamlit as st
 from langchain.prompts import PromptTemplate
 from langchain_community.llms import CTransformers
-
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = "hf_hpCphWzchHdfgdfgdfgdeFHKdGOkllbf"
 def download_model(model_url, model_path):
     # Check if the model file exists, if not, download it
     if not os.path.exists(model_path):
