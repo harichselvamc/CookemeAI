@@ -2,25 +2,29 @@ import os
 import streamlit as st
 from langchain.prompts import PromptTemplate
 from langchain_community.llms import CTransformers
+import gdown
 
 def download_model(model_url, model_path):
     # Check if the model file exists, if not, download it
     if not os.path.exists(model_path):
         st.info("Downloading model...")
-        os.system(f"wget {model_url} -O {model_path}")
-        st.success("Model downloaded successfully!")
+        try:
+            gdown.download(model_url, model_path, quiet=False)
+            st.success("Model downloaded successfully!")
+        except Exception as e:
+            st.error(f"Error downloading model: {str(e)}")
     else:
         st.info("Model already exists, skipping download...")
 
 def cookmeai(user_input):
     try:
-        model_url = "https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/blob/main/llama-2-7b-chat.ggmlv3.q8_0.bin"
-        model_path = "llama-2-7b-chat.ggmlv3.q8_0.bin"
+        model_url = 'https://drive.google.com/uc?id=1-4krkrTTx3DvISRrbftG4WhQj6dlAM_E'
+        model_path = 'llama-2-7b-chat.ggmlv3.q8_0.bin'
 
         download_model(model_url, model_path)
 
         llm = CTransformers(
-            model=model_path,
+            model="llama-2-7b-chat.ggmlv3.q8_0.bin",
             model_type="llama",
             config={
                 "temperature": 0.01,
@@ -70,5 +74,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
