@@ -92,7 +92,7 @@ def download_model(model_url, model_path):
 def cookmeai(user_input):
     try:
         model_url = "https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/blob/main/llama-2-7b-chat.ggmlv3.q8_0.bin"
-        model_path = "llama-2-7b-chat.ggmlv3.q8_0.bin"
+        model_path = "/mount/src/cookemeai/llama-2-7b-chat.ggmlv3.q8_0.bin"
 
         download_model(model_url, model_path)
 
