@@ -3,3 +3,4 @@ torch
 ctransformers
 langchain
 langchain_community
+gdown
