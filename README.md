@@ -20,13 +20,13 @@ To run CookmeAI locally, follow these steps:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/harichselvamc/CookemeAI.git
+   git clone https://github.com/harichselvamc/CookmeAI.git
    ```
    
 2. Navigate to the project directory:
 
    ```bash
-   cd CookemeAI
+   cd CookmeAI
    ```
 
 3. Install the required dependencies:
